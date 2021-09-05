@@ -17,22 +17,22 @@
             <th>Actions</th>
         </thead>
       </table> 
-      <form>
+      <form onSubmit="return submitData()">
         <div>
           <label>Nume </label>
-          <input name="nume" id="nume">
+          <input name="nume" id="nume" required>
         </div>
         <div>
           <label>Prenume </label>
-          <input name="prenume" id="prenume">
+          <input name="prenume" id="prenume" required>
         </div>
         <div>
           <label>Email </label>
-          <input name="email" id="email">
+          <input name="email" id="email" required>
         </div>
         <div>
           <label>Sex: </label>
-            <select id="sex" name="sex">
+            <select id="sex" name="sex" required>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
               <option value="Prefer not to say">Prefer not to say</option>
@@ -40,9 +40,9 @@
         </div>
         <div>
           <label>BirthDate </label>
-          <input type="date" id="birthdate">
+          <input type="date" id="birthdate" required>
         </div>
-        <button type="button" onclick="submitData()">Submit</button>
+        <button type="submit">Submit</button>
       </form>
   </body>
 </html>
