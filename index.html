@@ -2,6 +2,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="index.css" />
+    <script src="index.js"></script>
     <meta charset="utf-8" />
     <title>Google</title>
   </head>
@@ -24,10 +25,37 @@
           <td>Male</td>
           <td>23.04.1998</td>
           <td>
-            <a>Edit</a> |
-            <a>Delete</a>
+            <button>Edit</button> |
+            <button onclick="deleteRow()">Delete</button>
           </td>
         </tr>
-      </table>  
+      </table> 
+      <form>
+        <div>
+          <label>Nume </label>
+          <input name="nume">
+        </div>
+        <div>
+          <label>Prenume </label>
+          <input name="prenume">
+        </div>
+        <div>
+          <label>Email </label>
+          <input name="nume">
+        </div>
+        <div>
+          <label>Sex: </label>
+            <select id="sex" name="sex">
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Prefer not to say">Prefer not to say</option>
+            </select>
+        </div>
+        <div>
+          <label>BirthDate </label>
+          <input type="date">
+        </div>
+        <button onclick="submitData()">Submit</button>
+      </form>
   </body>
 </html>
