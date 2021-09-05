@@ -1,7 +1,27 @@
+window.onload = function() {
+    var reloading = sessionStorage.getItem("reloading");
+    if (reloading) {
+        sessionStorage.removeItem("reloading");
+        fetchTable();
+    }
+}
 
+function reloadP() {
+    sessionStorage.setItem("reloading", "true");
+    document.location.reload();
+}
 
 function deleteRow(id){
-    document.getElementById(id.toString()).remove();
+    var users = JSON.parse(window.localStorage.getItem("users") || "[]");
+    for (var entry in users){
+        var user = users[entry];
+        if(user.id == id){
+            users.splice(entry,1);
+            break;
+        }
+    }
+    window.localStorage.setItem("users",JSON.stringify(users));
+    fetchTable();
 };
 
 function submitData(){
@@ -26,6 +46,11 @@ function submitData(){
 function fetchTable() {
     var loadedData = JSON.parse(window.localStorage.getItem("users"));
     var loadedTable = document.getElementById("usersTable");
+    var rowCount = loadedTable.rows.length;
+    var tableHeaderRowCount = 1;
+    for (var i = tableHeaderRowCount; i < rowCount; i++) {
+        loadedTable.deleteRow(tableHeaderRowCount);
+    }
     console.log(loadedData);
     for (var entry in loadedData) {
         var user = loadedData[entry];
