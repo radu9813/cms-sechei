@@ -8,41 +8,41 @@
   </head>
   <body onload="fetchTable()">
     <table id="usersTable">
-        <thead>
-            <th>Nume</th>
-            <th>Prenume</th>
-            <th>Email</th>
-            <th>Sex</th>
-            <th>Data Nasterii</th>
-            <th>Actions</th>
-        </thead>
-      </table> 
-      <form onSubmit="return submitData()">
-        <div>
-          <label>Nume </label>
-          <input name="nume" id="nume" required>
-        </div>
-        <div>
-          <label>Prenume </label>
-          <input name="prenume" id="prenume" required>
-        </div>
-        <div>
-          <label>Email </label>
-          <input name="email" id="email" required>
-        </div>
-        <div>
-          <label>Sex: </label>
-            <select id="sex" name="sex" required>
-              <option value="Male">Male</option>
-              <option value="Female">Female</option>
-              <option value="Prefer not to say">Prefer not to say</option>
-            </select>
-        </div>
-        <div>
-          <label>BirthDate </label>
-          <input type="date" id="birthdate" required>
-        </div>
-        <button type="submit">Submit</button>
-      </form>
+      <thead>
+        <th>Nume</th>
+        <th>Prenume</th>
+        <th>Email</th>
+        <th>Sex</th>
+        <th>Data Nasterii</th>
+        <th>Actions</th>
+      </thead>
+    </table>
+    <form onSubmit="return submitData()">
+      <div>
+        <label>Nume </label>
+        <input name="nume" id="nume" required />
+      </div>
+      <div>
+        <label>Prenume </label>
+        <input name="prenume" id="prenume" required />
+      </div>
+      <div>
+        <label>Email </label>
+        <input name="email" id="email" required />
+      </div>
+      <div>
+        <label>Sex: </label>
+        <select id="sex" name="sex" required>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Prefer not to say">Prefer not to say</option>
+        </select>
+      </div>
+      <div>
+        <label>BirthDate </label>
+        <input type="date" id="birthdate" required />
+      </div>
+      <button type="submit">Submit</button>
+    </form>
   </body>
 </html>
