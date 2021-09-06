@@ -24,9 +24,46 @@ function deleteRow(id) {
   fetchTable();
 }
 
+function validate() {
+  var error = "";
+  var name = document.getElementById("nume");
+  if (name.value == "") {
+    error += " \nThe employee last name should not be empty.\n";
+  }
+  var prenume = document.getElementById("prenume");
+  if (prenume.value == "") {
+    error += " \nThe employee first name should not be empty.\n";
+  }
+
+  var email = document.getElementById("email");
+  if (email.value == "" || email.value.indexOf("@") == -1) {
+    error += " \nThe email address does not have a valid format.\n";
+  }
+
+  var birthDate = document.getElementById("birthdate");
+  console.log(birthDate.value)
+  var auxBirthdate = new Date(birthDate.value);
+  var yearsOld = new Date(Date.now() - auxBirthdate.getTime());
+  console.log(Math.abs(yearsOld.getFullYear()) - 1970);
+  if (birthDate.value == "" || Math.abs(yearsOld.getFullYear()) - 1970 < 16) {
+    error += " \nThe employee should be over 16 years old.\n";  
+  } 
+
+  console.log(error);
+  if (error != ""){
+    alert(error);
+    return false;
+  }
+
+  return true;
+}
+
 function submitData() {
   var users = JSON.parse(window.localStorage.getItem("users") || "[]");
   console.log("# of users: " + users.length);
+  if(validate() == false){
+    return false;
+  }
   var user = {
     id: Date.now(),
     nume: document.getElementById("nume").value,
