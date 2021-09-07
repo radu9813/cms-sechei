@@ -32,17 +32,21 @@
         <label>BirthDate </label>
         <input type="date" id="birthdate">
       </div>
-      <button type="button" onclick="submitData()">Submit</button>
+      <button type="submit" onclick="submitData()">Submit</button>
     </form>
     <table id="usersTable">
       <thead>
-        <th>Nume</th>
-        <th>Prenume</th>
-        <th>Email</th>
-        <th>Sex</th>
-        <th>Data Nasterii</th>
-        <th>Actions</th>
+        <tr>
+          <th scope="col">Nume</th>
+          <th scope="col">Prenume</th>
+          <th scope="col">Email</th>
+          <th scope="col">Sex</th>
+          <th scope="col">Data Nasterii</th>
+          <th scope="col">Actions</th>
+        </tr>  
       </thead>
+      <tbody>
+      </tbody>
     </table>
   </body>
 </html>

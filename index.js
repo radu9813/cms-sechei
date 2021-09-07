@@ -21,7 +21,7 @@ function deleteRow(id) {
     }
   }
   window.localStorage.setItem("users", JSON.stringify(users));
-  fetchTable();
+  window.location.reload();
 }
 
 function validate() {
@@ -60,7 +60,6 @@ function validate() {
 
 function submitData() {
   var users = JSON.parse(window.localStorage.getItem("users") || "[]");
-  console.log("# of users: " + users.length);
   if(validate() == false){
     return false;
   }
@@ -74,13 +73,11 @@ function submitData() {
   };
   users.push(user);
   window.localStorage.setItem("users", JSON.stringify(users));
-  console.log(users);
-  fetchTable();
 }
 
 function fetchTable() {
   var loadedData = JSON.parse(window.localStorage.getItem("users"));
-  var loadedTable = document.getElementById("usersTable");
+  var loadedTable = document.getElementById("usersTable").getElementsByTagName('tbody')[0];
   var rowCount = loadedTable.rows.length;
   var tableHeaderRowCount = 1;
   for (var i = tableHeaderRowCount; i < rowCount; i++) {
@@ -93,14 +90,19 @@ function fetchTable() {
     var row = loadedTable.insertRow();
     row.id = user.id;
     var numeCell = row.insertCell(0);
+    numeCell.setAttribute("data-label","Nume");
     numeCell.innerHTML = user.nume;
     var prenumeCell = row.insertCell(1);
+    prenumeCell.setAttribute("data-label","Prenume");
     prenumeCell.innerHTML = user.prenume;
     var emailCell = row.insertCell(2);
+    emailCell.setAttribute("data-label","Email");
     emailCell.innerHTML = user.email;
     var sexCell = row.insertCell(3);
+    sexCell.setAttribute("data-label","Sex");
     sexCell.innerHTML = user.sex;
     var birthDateCell = row.insertCell(4);
+    birthDateCell.setAttribute("data-label","Birthday");
     birthDateCell.innerHTML = user.birthDate;
     var actionsCell = row.insertCell(5);
     actionsCell.innerHTML = `<button onClick="deleteRow(${user.id})">Delete</button>`;
