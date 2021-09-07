@@ -7,31 +7,26 @@
     <title>Google</title>
   </head>
   <body onload="fetchTable()">
-    <form >
-      <div>
-        <label>Nume </label>
-        <input name="nume" id="nume"/>
-      </div>
-      <div>
-        <label>Prenume </label>
-        <input name="prenume" id="prenume"/>
-      </div>
-      <div>
-        <label>Email </label>
-        <input name="email" id="email"/>
-      </div>
-      <div>
-        <label>Sex: </label>
-        <select id="sex" name="sex">
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
-          <option value="Prefer not to say">Prefer not to say</option>
-        </select>
-      </div>
-      <div>
-        <label>BirthDate </label>
-        <input type="date" id="birthdate">
-      </div>
+    <form>
+      <label>Nume </label>
+      <input name="nume" id="nume" />
+
+      <label>Prenume </label>
+      <input name="prenume" id="prenume" />
+
+      <label>Email </label>
+      <input name="email" id="email" />
+
+      <label>Sex: </label>
+      <select id="sex" name="sex">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Prefer not to say">Prefer not to say</option>
+      </select>
+
+      <label>BirthDate </label>
+      <input type="date" id="birthdate" />
+
       <button type="submit" onclick="submitData()">Submit</button>
     </form>
     <table id="usersTable">
@@ -43,10 +38,9 @@
           <th scope="col">Sex</th>
           <th scope="col">Data Nasterii</th>
           <th scope="col">Actions</th>
-        </tr>  
+        </tr>
       </thead>
-      <tbody>
-      </tbody>
+      <tbody></tbody>
     </table>
   </body>
 </html>

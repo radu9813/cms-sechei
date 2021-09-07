@@ -1,4 +1,4 @@
-
+/*Culoare pe ecran miscatoare*/
 html {
     background: linear-gradient(270deg, #be00ff, #ff0000);
     background-size: 400% 400%;
@@ -22,6 +22,52 @@ html {
     100%{background-position:0% 50%}
 }
 
+/* CSS form responsive frumi */
+.form-inline {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+  }
+  
+  
+  .form-inline label {
+    margin: 5px 10px 5px 0;
+  }
+  
+  
+  .form-inline input {
+    vertical-align: middle;
+    margin: 5px 10px 5px 0;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+  }
+  
+  
+  .form-inline button {
+    padding: 10px 20px;
+    background-color: dodgerblue;
+    border: 1px solid #ddd;
+    color: white;
+  }
+  
+  .form-inline button:hover {
+    background-color: royalblue;
+  }
+  
+  
+  @media (max-width: 950px) {
+    .form-inline input {
+      margin: 10px 0;
+    }
+  
+    .form-inline {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+
+/* CSS tabel responsive frumi */
 table {
     border: 1px solid #ccc;
     border-collapse: collapse;
